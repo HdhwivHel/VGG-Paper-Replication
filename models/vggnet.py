@@ -50,10 +50,3 @@ class VGG_16(nn.Module):
 
     def forward(self, x):
         return self.classifier(self.convblocks(x))
-
-
-model = VGG_16()
-print(model(torch.randn(1, 3, 224, 224)).shape)
-x = torch.randn(1, 3, 224, 224)
-y = model.convblocks(x)
-print(y.shape)
