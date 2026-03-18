@@ -56,7 +56,6 @@ def train():
         model.parameters(),
         lr=learning_rate,
         momentum=momentum,
-        
     )
 
     for epoch in tqdm(range(num_epochs)):
