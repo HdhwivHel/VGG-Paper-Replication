@@ -1,21 +1,26 @@
 from pathlib import Path
 import os
+import sys
 import torch
 from torch.utils.data import DataLoader
 from tqdm.auto import tqdm
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
 from dataset.data_pipeline import get_datasets
 from models.vggnet import VGG_16
 import yaml
 
-BASE_DIR = Path(__file__).resolve().parent
-CONFIG_PATH = BASE_DIR / "configs" / "config.yaml"
-CHECKPOINT_PATH = BASE_DIR / "results" / "checkpoints" / "VGG_16.pth"
+CONFIG_PATH = PROJECT_ROOT / "configs" / "config.yaml"
+CHECKPOINT_PATH = PROJECT_ROOT / "results" / "checkpoints" / "VGG_16.pth"
 
 with open(CONFIG_PATH, "r", encoding="utf-8") as f:
     config = yaml.safe_load(f)
 
 batch_size = config["testing"]["batch_size"]
-workers = config["test_dataset"]["num_workers"]
+workers = config["test_dataloader"]["num_workers"]
 
 
 def test():
