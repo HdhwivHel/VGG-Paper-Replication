@@ -4,3 +4,6 @@ numpy
 matplotlib
 tqdm
 pyyaml
+datasets
+gradio
+pillow
