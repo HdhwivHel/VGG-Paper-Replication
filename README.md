@@ -179,3 +179,4 @@ This implementation preserves the **core VGG architecture**, including **stacked
 The goal of this project is to **faithfully reproduce the VGG architecture and training setup** while making the model accessible for experimentation on modern hardware.
 
 ---
+````
