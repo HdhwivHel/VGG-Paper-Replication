@@ -56,6 +56,7 @@ def train():
         model.parameters(),
         lr=learning_rate,
         momentum=momentum,
+        weight_decay=weight_decay,
     )
 
     for epoch in tqdm(range(num_epochs)):
