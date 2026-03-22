@@ -24,8 +24,6 @@ git clone https://github.com/HdhwivHel/VGG-Paper-Replication
 cd VGG-Paper-Replication
 ```
 
-````
-
 Install the required dependencies:
 
 ```bash
@@ -96,11 +94,11 @@ All core architectural components, including **3×3 convolutions, ReLU activatio
 
 ## 2. Training Differences
 
-| Component              | Original Paper                             | This Implementation       | Reason                              |
-| ---------------------- | ------------------------------------------ | ------------------------- | ----------------------------------- |
-| Epochs                 | ~74 epochs                                 | **50 epochs**             | Smaller dataset (ImageNet-100)      |
-| Learning Rate Schedule | LR reduced when validation error plateaued | Constant LR               | Easier Setup                        |
-| Hardware Setup         | Multi-GPU training                         | Single GPU                | Modern hardware capability          |
+| Component              | Original Paper                             | This Implementation | Reason                         |
+| ---------------------- | ------------------------------------------ | ------------------- | ------------------------------ |
+| Epochs                 | ~74 epochs                                 | **50 epochs**       | Smaller dataset (ImageNet-100) |
+| Learning Rate Schedule | LR reduced when validation error plateaued | Constant LR         | Easier Setup                   |
+| Hardware Setup         | Multi-GPU training                         | Single GPU          | Modern hardware capability     |
 
 ---
 
@@ -179,4 +177,3 @@ This implementation preserves the **core VGG architecture**, including **stacked
 The goal of this project is to **faithfully reproduce the VGG architecture and training setup** while making the model accessible for experimentation on modern hardware.
 
 ---
-````
